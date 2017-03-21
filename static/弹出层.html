@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出层</title>
+    <link rel="stylesheet" href="./css/alert.css"/>
+    <link rel="stylesheet" href="./css/form.css"/>
+</head>
+<body>
+<div class="back"></div>
+<div class="main">
+<div class="p">
+    <img src="./images/dh.png" alt=""/>
+    <span>删除成功！</span>
+    <p class="btn btn-primary">确定</p>
+</div>
+</div>
+</body>
+<script src="./js/jquery.js"></script>
+<script>
+    $(function(){
+        var h=$(document.body).height();
+        var minh=$(document).height();
+        $('.main').css('height',h).css('min-height',minh);
+        $('.back').css('height',h).css('min-height',minh);
+        $(window).resize(function(){
+            var h=$(document.body).height();
+            var minh=$(document).height();
+            $('.main').css('height',h).css('min-height',minh);
+            $('.back').css('height',h).css('min-height',minh);
+        });
+        $('.btn').click(function(){
+            $('.back,.main').hide();
+        })
+    })
+</script>
+</html>
